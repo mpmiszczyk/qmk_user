@@ -1,6 +1,17 @@
-# QMK Userspace
+# `mpm` QMK Userspace
 
-This is a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the main QMK repository.
+`mpmiszczyk` keymap.
+
+- mostly for Lily58 and ErgoDox
+- suited for `emacs` as a daily driver, with `Ctrl` and other modifiers nearby
+- with nix flake setup
+
+## TODO
+
+- Colemak constant layer
+- PSP controller setup
+- better `[` `]`
+- add a dog to left display
 
 ## Howto configure your build targets
 
