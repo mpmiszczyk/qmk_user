@@ -2,20 +2,27 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs }: with nixpkgs.legacyPackages.x86_64-linux; {
+  outputs = { self, nixpkgs, nixpkgs-unstable }:     let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
+    in {
 
-    # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+    devShells.${system}.default = pkgs.mkShell {
+      # hardeningDisable = [
+      #   "pic"
+      #   "pie"
+      # ];
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-    devShells.x86_64-linux.default = mkShell {
-      packages = [
+      buildInputs = with pkgs; [
         qmk
+        clang-tools
         keymapviz
-      ];
+      ] ;
     };
   };
 }
