@@ -15,7 +15,7 @@
 
 ## Howto configure your build targets
 
-1. Run the normal `qmk setup` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
+1. ~Run the normal `qmk setup` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.~ The `qmk_firmware` is pulled trough the flake, and `QMK_HOME` is pointing to it.  To update it run `nix flake update qmk_firmware`
 1. Fork this repository
 1. Clone your fork to your local machine
 1. Enable userspace in QMK config using `qmk config user.overlay_dir="$(realpath qmk_userspace)"`
