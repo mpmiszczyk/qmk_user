@@ -23,6 +23,11 @@
         clang-tools
         keymapviz
       ] ;
+
+      shellHook = ''
+        echo "Pulling git depenndencies"
+        git submodule update --init --recursive
+      '';
     };
   };
 }
