@@ -27,6 +27,8 @@
       shellHook = ''
         echo "Pulling git depenndencies"
         git submodule update --init --recursive
+        export QMK_HOME="$(pwd)/qmk_firmware"
+        export QMK_FIRMWARE="$(pwd)/qmk_firmware"
       '';
     };
   };
