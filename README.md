@@ -8,6 +8,7 @@
 
 ## TODO
 
+- combo keys for modifiers
 - Colemak constant layer
 - PSP controller setup
 - better `[` `]`

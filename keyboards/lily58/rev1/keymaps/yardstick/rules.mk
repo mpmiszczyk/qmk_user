@@ -11,8 +11,8 @@ RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 OLED_ENABLE = yes           # OLED display
 
-POINTING_DEVICE_ENABLE = yes
-POINTING_DEVICE_DRIVER = pimoroni_trackball
+POINTING_DEVICE_ENABLE = no
+# POINTING_DEVICE_DRIVER = pimoroni_trackball
 
 WPM_ENABLE = yes
 
