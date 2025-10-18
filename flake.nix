@@ -25,10 +25,11 @@
       ] ;
 
       shellHook = ''
-        echo "Pulling git depenndencies"
+        echo "Pulling the firmware"
         git submodule update --init --recursive
         export QMK_HOME="$(pwd)/qmk_firmware"
         export QMK_FIRMWARE="$(pwd)/qmk_firmware"
+        qmk config user.keyboard=lily58 user.keymap=yardstick
       '';
     };
   };
